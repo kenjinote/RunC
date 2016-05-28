@@ -68,6 +68,7 @@ void BuildAndRun(LPCSTR lpszCode, DWORD dwSize, LPCTSTR lpszTempPath, HWND hOutp
 	lstrcpy(szBinFolderPath, lpszTempPath);
 	PathAppend(szBinFolderPath, TEXT("BIN"));
 	SetCurrentDirectory(szBinFolderPath);
+	SetEnvironmentVariable(TEXT("PATH"), szBinFolderPath);
 	TCHAR szCodeFilePath[MAX_PATH];
 	lstrcpy(szCodeFilePath, lpszTempPath);
 	PathAppend(szCodeFilePath, TEXT("code.cpp"));
